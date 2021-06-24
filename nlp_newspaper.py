@@ -52,7 +52,7 @@ for each_article in gamespot.articles:
     # temp_df['Source'] = each_article.source_url
     try:
         temp_df['Section'] = each_article.meta_data['article']['section']
-        print(each_article.meta_data['article']['section'])
+        # print(each_article.meta_data['article']['section'])
     except:
         temp_df['Section'] = "Undefined"
         count_no_section += 1
@@ -63,6 +63,7 @@ for each_article in gamespot.articles:
     #     print(temp_df,"found")
     # else:
     #     final_df = final_df.append(temp_df, ignore_index = True)
+    print(temp_df)
     final_df = final_df.append(temp_df, ignore_index = True)
     
     # Update count

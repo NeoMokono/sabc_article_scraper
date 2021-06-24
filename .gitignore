@@ -1,0 +1,7 @@
+test/
+scraperEnv/
+final/
+*.csv
+*.tsv
+*.zip
+*.tar.gz

@@ -1,0 +1,26 @@
+1. Activate the environment
+
+.\scraperEnv\Scripts\activate
+
+2. install libraries
+pip install requirements.txt
+
+3. run code
+
+python nlp_newspaper
+
+
+
+
+
+
+
+
+
+
+
+
+0. create environment if its not in the repo
+
+python3 -m venv /path/to/new/virtual/environment
+python -m venv environment_name

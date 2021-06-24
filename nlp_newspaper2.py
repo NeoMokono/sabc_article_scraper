@@ -6,15 +6,6 @@ import csv
 
 import nltk
 
-# nltk.download('punkt')
-
-# URL
-# Title of story
-# Body of the story
-# Date
-# Author(s)
-# Section
-
 
 # Let's say we wanted to download articles from Gamespot (which is a web site that discusses video games)
 gamespot = newspaper.build("https://www.sabcnews.com/sabcnews/category/south-africa/", memoize_articles = False) 
