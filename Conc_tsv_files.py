@@ -27,6 +27,19 @@ print("3...",result_df.shape[1])
 
 final_df = result_df.drop_duplicates(subset=['source_URL'])
 
+# for index, row in final_df.iterrows():
+#     print(row['Summary'], row['Text'])
+#     article_text = row['Text']
+#     article_summary = row['Summary']
+
+#     encoded_string = article_text.encode("ascii", "ignore")
+#     decode_string = encoded_string.decode()
+#     final_df['Text'][index] = decode_string
+
+#     encoded_string = article_summary.encode("ascii", "ignore")
+#     decode_string = encoded_string.decode()
+#     final_df['Summary'][index] = decode_string
+
 # final_df = result_df.drop(columns=[''])
 
 print("4...",final_df.size)
@@ -38,5 +51,5 @@ final_df.drop(final_df.columns[0], axis=1, inplace=True)
 print("4...",final_df.shape[0])
 print("4...",final_df.shape[1])
 
-final_df.to_csv('final3/articles_SABC_final_SA2.tsv', sep='\t')
+final_df.to_csv('final3/articles_SABC_decoded_2.tsv', sep='\t')
 print("done conc..........")
