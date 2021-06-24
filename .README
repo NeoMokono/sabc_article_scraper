@@ -4,6 +4,7 @@
 
 2. install libraries
 pip install requirements.txt
+pip install --user -U nltk
 
 3. run code
 
