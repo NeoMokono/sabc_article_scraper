@@ -15,24 +15,25 @@ print(len(col_texts_list))
 
 sentences = []
 
-limit = 200000000000
+limit = 20000000
 i = 0
 for article_text in col_texts_list:
     if limit<i:
         break
     i +=1
-    tokens = nltk.sent_tokenize(article_text)
+    encoded_string = article_text.encode("ascii", "ignore")
+    decode_string = encoded_string.decode()
+    tokens = nltk.sent_tokenize(decode_string)
     for t in tokens:
         print (t, "\n")
-        encoded_string = t.encode("ascii", "ignore")
-        decode_string = encoded_string.decode()
-        sentences.append([decode_string,""])
+        
+        sentences.append([t,""])
 
 final_df = pd.DataFrame(columns=['Sentence', 'Translation'], data=sentences)
 
 final_df = final_df.drop_duplicates(subset=['Sentence'])
 
-final_df.to_csv('final3/sentences_SABC_3.tsv', sep='\t')
+final_df.to_csv('final3/sentences_SABC_v2_1.tsv', sep='\t')
 print("done list of sentences..........",i)
 
 # dataset_df_2 = pd.read_csv('final3/scraped_business_SABC_15.tsv', sep='\t', header=0)
