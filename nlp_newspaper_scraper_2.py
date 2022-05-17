@@ -8,8 +8,9 @@ import nltk
 
 
 # Let's say we wanted to download articles from Gamespot (which is a web site that discusses video games)
+# Link of the publication (SABC). include category of news
 gamespot = newspaper.build("https://www.sabcnews.com/sabcnews/category/south-africa/", memoize_articles = False) 
-# gamespot = newspaper.build("https://www.gamespot.com/news/", memoize_articles = False) 
+
 # I set memoize_articles to False, because I don't want it to cache and save the articles to memory, run after run.
 # Fresh run, everytime we run execute this script essentially
 link = "https://www.sabcnews.com/sabcnews/category/south-africa/"

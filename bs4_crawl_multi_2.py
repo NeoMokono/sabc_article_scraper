@@ -9,7 +9,7 @@ final_df = pd.DataFrame()
 
 # sections = ["south-africa", "africa", "world", "lifestyle", "sport","sci-tech","politics","business"]
 
-sections = ["sci-tech","politics","business"]
+sections = ["south-africa", "africa", "world", "lifestyle", "sport"]
 
 
 current_section = sections[0]
@@ -19,11 +19,11 @@ link = "https://www.sabcnews.com/sabcnews/category/south-africa/"
 
 count = 2
 limit = 100
-pages = 1
+pages = 16
 for sec in sections:
     current_section = sec
-    pages = 1
-    while pages<15:
+    pages = 16
+    while pages<150:
         pages +=1
         nbc_url="https://www.sabcnews.com/sabcnews/category/"+current_section+"/page/"+str(pages)+"/"
 
@@ -68,9 +68,15 @@ for sec in sections:
             author = bsobj.find('span',{'class':'author'})
             # print("date =",date_issued.text.strip())
             # print("auth =",author.text.strip())
-            author = author.text.strip()
-            date_issued = date_issued.text.strip()
+            try:
 
+                author = author.text.strip()
+            except:
+                author = "N/A"
+            try:        
+                date_issued = date_issued.text.strip()
+            except:
+                date_issued = "N/A"
             temp_text = ""
             for news in bsobj.findAll('div',{'class':'post-content'}):
                 # print(news.text.strip())
@@ -97,7 +103,7 @@ for sec in sections:
 
         final_df = final_df.drop_duplicates(subset=['source_URL'])
         # print(final_df.size)
-    final_df.to_csv('final3/scraped_'+current_section+'_SABC_'+str(pages)+'.tsv', sep='\t')
+    final_df.to_csv('final6extension/scraped_'+current_section+'_SABC_'+str(pages)+'.tsv', sep='\t')
 
 
 print("done scraping..........")   
