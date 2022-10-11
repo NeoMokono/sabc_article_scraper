@@ -1,6 +1,5 @@
 from bs4 import BeautifulSoup as soup
 import requests
-
 import pandas as pd
 import csv
 

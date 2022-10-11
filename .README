@@ -11,16 +11,6 @@ pip install --user -U nltk
 python nlp_newspaper
 
 
-
-
-
-
-
-
-
-
-
-
 0. create environment if its not in the repo
 
 python3 -m venv /path/to/new/virtual/environment

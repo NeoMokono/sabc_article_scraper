@@ -7,13 +7,16 @@ import csv
 import nltk
 
 
-# Let's say we wanted to download articles from Gamespot (which is a web site that discusses video games)
+# Let's say we wanted to download articles from SABC (which is a web site for South African broadcaster)
 # Link of the publication (SABC). include category of news
+link = "https://www.sabcnews.com/sabcnews/category/south-africa/"
 gamespot = newspaper.build("https://www.sabcnews.com/sabcnews/category/south-africa/", memoize_articles = False) 
 
 # I set memoize_articles to False, because I don't want it to cache and save the articles to memory, run after run.
+
+
 # Fresh run, everytime we run execute this script essentially
-link = "https://www.sabcnews.com/sabcnews/category/south-africa/"
+
 final_df = pd.DataFrame()
 
 limit = 2000
