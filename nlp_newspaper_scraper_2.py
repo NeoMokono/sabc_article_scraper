@@ -72,14 +72,14 @@ while i<600:
     i +=1
     link = "https://www.sabcnews.com/sabcnews/category/south-africa/page/"+str(i)+"/"
     final_df = final_df.drop_duplicates(subset=['source_URL'])
-    final_df.to_csv('final/articles_SABC_SA_pages_'+str(i)+'.tsv', sep='\t')
+    final_df.to_csv('output/articles_SABC_SA_pages_'+str(i)+'.tsv', sep='\t')
     print("done scraping..........",i)
 
 
 # From here you can export this Pandas DataFrame to a csv file
 # final_df.to_csv('my_scraped_articles_SABC6.csv')
 final_df = final_df.drop_duplicates(subset=['source_URL'])
-final_df.to_csv('final/articles_SABC_final_SA_pages.tsv', sep='\t')
+final_df.to_csv('output/articles_SABC_final_SA_pages.tsv', sep='\t')
 print("done scraping..........",count_no_section)
 
 # csv.writer(open('scraped_articles_SABC_7.tsv', 'w+'), delimiter='\t').writerows(csv.reader(open("my_scraped_articles_SABC6.csv", encoding="utf8",errors="ignore")))
